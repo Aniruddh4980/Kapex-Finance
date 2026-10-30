@@ -46,6 +46,7 @@ Before scoring, the UI displays the loan-to-income ratio, estimated principal pe
 **SHAP Plot**
 
 ![SHAP Summary Plot](app/artifacts/Shap_Summary.png)
+
 **SHAP Summary**
 1. credit_utilization_ratio: High values (red) increase the likelihood of default, as shown by positive SHAP values.
 2. delinquency_ratio: Similarly, higher values increase the risk, shown by positive SHAP values.
@@ -60,6 +61,7 @@ Before scoring, the UI displays the loan-to-income ratio, estimated principal pe
 **Model Evaluation:**
 
 1. **ROC Curve:**
+
     ![ROC Curve](app/artifacts/ROC.png)
 
 
@@ -178,10 +180,8 @@ Open the local URL printed by Streamlit, usually `http://localhost:8501`.
 
 ## Notes
 
-- This is a learning project based on real world simulated data.
-- Some inputs in the model feature frame are currently populated with fixed placeholder values in `prepare_data`; they are not collected in the UI.
-- The score is a linear transformation of the predicted probability. It is not, by itself, evidence that the probability is calibrated or that the score has been validated for real-world lending decisions.
-- Before using the application for actual underwriting, validate the model on appropriate unseen data, review the preprocessing and placeholder inputs, and assess calibration, fairness, stability, and decision thresholds.
+- To satisfy the requirements of the scaler, the prepare_data function populates certain feature frame inputs with fixed placeholder values. These columns are not collected via the UI and were excluded during actual model training; however, they must be included here because they were part of the original scaling process.
+- This is a learning project built using simulated, real-world data.
 
 ## License
 
