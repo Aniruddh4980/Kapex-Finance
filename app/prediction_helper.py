@@ -1,13 +1,20 @@
 import joblib
 import pandas as pd
 import numpy as np
+from pathlib import Path
+import joblib
 
 
 # ==================================================
 # Load artifacts
 # ==================================================
 
-model_data = joblib.load("app/artifacts/model_data.joblib")
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "artifacts" / "model_data.joblib"
+
+# Load your model
+model_data = joblib.load(MODEL_PATH)
+
 
 model = model_data["model"]
 features = model_data["features"]

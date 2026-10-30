@@ -436,16 +436,16 @@ with right_col:
 
                 rating_clean = str(rating).strip().lower()
                 palette = {
-                    "poor": {"color": "#ef4444", "bg": "rgba(239, 68, 68, 0.12)", "decision": "HIGH RISK — MANUAL REVIEW"},
-                    "average": {"color": "#f59e0b", "bg": "rgba(245, 158, 11, 0.12)", "decision": "MODERATE RISK — CONDITIONAL"},
-                    "good": {"color": "#3b82f6", "bg": "rgba(59, 130, 246, 0.12)", "decision": "LOW RISK — STANDARD APPROVAL"},
-                    "excellent": {"color": "#10b981", "bg": "rgba(16, 185, 129, 0.12)", "decision": "PRIME TIER — AUTO APPROVE"}
+                    "poor": {"color": "#ef4444", "bg": "rgba(239, 68, 68, 0.12)", "decision": "HIGH RISK"},
+                    "average": {"color": "#f59e0b", "bg": "rgba(245, 158, 11, 0.12)", "decision": "MODERATE RISK"},
+                    "good": {"color": "#3b82f6", "bg": "rgba(59, 130, 246, 0.12)", "decision": "LOW RISK"},
+                    "excellent": {"color": "#10b981", "bg": "rgba(16, 185, 129, 0.12)", "decision": "PRIME TIER"}
                 }
                 theme = palette.get(rating_clean, {"color": "#94a3b8", "bg": "rgba(148, 163, 184, 0.12)", "decision": "ASSESSMENT COMPLETE"})
 
                 # Normalize Credit Score (300 - 900 scale) for SVG Semi-Circle Gauge
                 norm_score = max(0.0, min(1.0, (float(credit_score) - 300.0) / 600.0))
-                arc_length = 251.2  # Circumference of semi-circle with r=80
+                arc_length = 251.2  # Circumference of semicircle with r=80
                 dash_offset = arc_length * (1.0 - norm_score)
                 prob_pct = min(100.0, max(0.0, float(probability) * 100.0))
 

@@ -1,6 +1,6 @@
 # Kapex Finance AI Credit Risk Modelling App
 
-A Streamlit application for exploring loan-applicant details and estimating credit default risk. The app loads a pre-trained Logistic Regression model and its preprocessing artifacts, then returns an estimated probability of default, a credit score on a 300–900 scale, and a risk rating.
+A Streamlit application for exploring loan-applicant details and estimating credit default risk. The app loads Logistic Regression model which is trained on Bureau data and its preprocessing artifacts, then returns an estimated probability of default, a credit score on a 300–900 scale, and a risk rating.
 
 Live Link: https://kapex-finance.streamlit.app/
 
@@ -37,17 +37,52 @@ The interface is organized into three input sections:
 
 Before scoring, the UI displays the loan-to-income ratio, estimated principal per month, and credit utilization. Selecting **Calculate Risk** runs the prediction pipeline and displays the default probability, score gauge, and rating.
 
-### Application screenshots
+### Model Stats
 
 **Logistic Regression Model — Classification report**
 
-![Logistic Regression Model — evaluation report](app/artifacts/img_2.png)
+![Logistic Regression Model — evaluation report](app/artifacts/model_performance.png)
 
-**Logistic Regression Model — coefficient visualization**
+**SHAP Plot**
 
-![Logistic regression feature coefficients](app/artifacts/img.png)
+![SHAP Summary Plot](app/artifacts/Shap_Summary.png)
+**SHAP Summary**
+1. credit_utilization_ratio: High values (red) increase the likelihood of default, as shown by positive SHAP values.
+2. delinquency_ratio: Similarly, higher values increase the risk, shown by positive SHAP values.
+3. loan_to_income: Higher values (red) also increase the default risk.
+4. residence_type_Owned and residence_type_Rented: Different impacts based on whether the residence is owned or rented.
+5. avg_dpd_per_delinquency: Higher average days past due per delinquency increase the risk.
 
-The Classification report helps in determining Logistic Regression model's performance. The coefficient visualization describes model terms, whose magnitudes are affected by feature scaling and should not be interpreted as standalone causal effects.
+**SHAP Dependence plot**
+
+![SHAP Dependence](app/artifacts/Shap_dependence_plot.png)
+
+**Model Evaluation:**
+
+1. **ROC Curve:**
+    ![ROC Curve](app/artifacts/ROC.png)
+
+
+2. **Model trials and performance:** 
+
+    | Models | AUC | Gini |
+    | :--- | :---: | :---: |
+    | Logistic Regression | 98 | 96 |
+    | XGBoost | 99 | 96 |
+    | Random Forest | 97 | 95 |
+
+    AUC of 0.98: The model is very good at distinguishing between events and non-events.Gini coefficient of 0.96: This further confirms that the model is highly effective in its predictions, with almost perfect rank ordering capability.The Gini coefficient ranges from -1 to 1, where a value closer to 1 signifies a perfect model, 0 indicates a model with no discriminative power, and -1 signifies a perfectly incorrect model.
+
+
+3. **KS statistic:**
+
+    ![KS statistic](app/artifacts/KS.png)
+
+    KS ValueThe highest KS value is 85.88%, found at Decile 8. This indicates that the model's performance in distinguishing between events and non-events is most significant at this decile. (If KS is in top 3 decile and score above 40, it is considered a good predictive model.)
+
+**Feature Coefficient visualization**
+
+![Feature coefficients](app/artifacts/feature_imp.png)
 
 ## Scoring Workflow
 
