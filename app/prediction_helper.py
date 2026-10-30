@@ -7,7 +7,7 @@ import numpy as np
 # Load artifacts
 # ==================================================
 
-model_data = joblib.load("artifacts/model_data.joblib")
+model_data = joblib.load("app/artifacts/model_data.joblib")
 
 model = model_data["model"]
 features = model_data["features"]

@@ -1,8 +1,8 @@
-# Kapex Finance Credit Risk Scoring App
+# Kapex Finance AI Credit Risk Modelling App
 
 A Streamlit application for exploring loan-applicant details and estimating credit default risk. The app loads a pre-trained Logistic Regression model and its preprocessing artifacts, then returns an estimated probability of default, a credit score on a 300–900 scale, and a risk rating.
 
-> **Scope:** This repository documents the deployed scoring application.
+Live Link: https://kapex-finance.streamlit.app/
 
 ## Table of Contents
 
@@ -141,8 +141,9 @@ streamlit run main.py
 
 Open the local URL printed by Streamlit, usually `http://localhost:8501`.
 
-## Current Limitations
+## Notes
 
+- This is a learning project based on real world simulated data.
 - Some inputs in the model feature frame are currently populated with fixed placeholder values in `prepare_data`; they are not collected in the UI.
 - The score is a linear transformation of the predicted probability. It is not, by itself, evidence that the probability is calibrated or that the score has been validated for real-world lending decisions.
 - Before using the application for actual underwriting, validate the model on appropriate unseen data, review the preprocessing and placeholder inputs, and assess calibration, fairness, stability, and decision thresholds.
