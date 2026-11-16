@@ -70,8 +70,8 @@ Before scoring, the UI displays the loan-to-income ratio, estimated principal pe
     | Models | AUC | Gini |
     | :--- | :---: | :---: |
     | Logistic Regression | 98 | 96 |
-    | XGBoost | 99 | 96 |
-    | Random Forest | 97 | 95 |
+    | XGBoost | 99 | 98 |
+    | Random Forest | 97 | 94 |
 
     AUC of 0.98: The model is very good at distinguishing between events and non-events.Gini coefficient of 0.96: This further confirms that the model is highly effective in its predictions, with almost perfect rank ordering capability.The Gini coefficient ranges from -1 to 1, where a value closer to 1 signifies a perfect model, 0 indicates a model with no discriminative power, and -1 signifies a perfectly incorrect model.
 
@@ -80,7 +80,7 @@ Before scoring, the UI displays the loan-to-income ratio, estimated principal pe
 
     ![KS statistic](app/artifacts/KS.png)
 
-    KS ValueThe highest KS value is 85.88%, found at Decile 8. This indicates that the model's performance in distinguishing between events and non-events is most significant at this decile. (If KS is in top 3 decile and score above 40, it is considered a good predictive model.)
+    KS ValueThe highest KS value is 85.98%, found at Decile 8. This indicates that the model's performance in distinguishing between events and non-events is most significant at this decile. (If KS is in top 3 decile and score above 40, it is considered a good predictive model.)
 
 **Feature Coefficient visualization**
 
