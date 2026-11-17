@@ -15,7 +15,6 @@ Live Link: https://kapex-finance.streamlit.app/
 - [Model Artifacts and Explainability](#model-artifacts-and-explainability)
 - [Repository Structure](#repository-structure)
 - [Run Locally](#run-locally)
-- [Current Limitations](#current-limitations)
 
 ## Business Objective
 
@@ -158,14 +157,20 @@ The helper uses the saved model's `coef_` and `intercept_`, so the expected esti
 .
 ├── app/
 │   ├── artifacts/
-│   │   ├── model_data.joblib     Trained Logistic Regression Model
-│   │   ├── img.png               Model coefficients importance chart 
-│   │   └── img_2.png             Model Classification report
-│   ├── main.py                   Streamlit interface
-│   └── prediction_helper.py      Credit Risk Prediction helper
-├── data_and_notebooks            Model training Jupyter notebooks and datasets.
-├── requirements.txt              List of dependencies
-└── README.md                     Project documentation
+│   │   ├── model_data.joblib          Trained Logistic Regression Model
+│   │   ├── feature_imp.png            Model coefficients importance chart 
+│   │   ├── app_.png                   Streamlit app demo 
+│   │   ├── KS.png                     KS statistic chart 
+│   │   ├── model_performance.png      Model Classification report
+│   │   ├── modelling_steps.png        Modelling steps and flowchart 
+│   │   ├── ROC.png                    ROC Curve graph 
+│   │   ├── Shap_dependence_plot.png   Shap dependence plot for Logistic model  
+│   │   └── Shap_Summary.png           Shap summary for Logistic model
+│   ├── main.py                        Streamlit interface
+│   └── prediction_helper.py           Credit Risk Prediction helper
+├── data_and_notebooks                 Model training Jupyter notebooks and datasets.
+├── requirements.txt                   List of dependencies
+└── README.md                          Project documentation
 ```
 
 ## Run Locally
