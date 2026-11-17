@@ -69,9 +69,9 @@ Before scoring, the UI displays the loan-to-income ratio, estimated principal pe
 
     | Models | AUC | Gini |
     | :--- | :---: | :---: |
-    | Logistic Regression | 98 | 96 |
-    | XGBoost | 99 | 98 |
-    | Random Forest | 97 | 94 |
+    | Logistic Regression | 98.34 | 96.68 |
+    | XGBoost | 98.73 | 97.46 |
+    | Random Forest | 98.52 | 97.05 |
 
     AUC of 0.98: The model is very good at distinguishing between events and non-events.Gini coefficient of 0.96: This further confirms that the model is highly effective in its predictions, with almost perfect rank ordering capability.The Gini coefficient ranges from -1 to 1, where a value closer to 1 signifies a perfect model, 0 indicates a model with no discriminative power, and -1 signifies a perfectly incorrect model.
 
