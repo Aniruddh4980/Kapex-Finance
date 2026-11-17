@@ -4,6 +4,8 @@ A Streamlit application for exploring loan-applicant details and estimating cred
 
 Live Link: https://kapex-finance.streamlit.app/
 
+![App demo](app/artifacts/app_.png)
+
 ## Table of Contents
 
 - [Business Objective](#business-objective)
